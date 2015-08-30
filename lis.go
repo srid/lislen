@@ -8,12 +8,11 @@ import (
 const BUCKET_CAPACITY = 500000
 
 type LIS struct {
-	ch     chan int
 	bucket []int
 }
 
 func NewLIS() *LIS {
-	return &LIS{make(chan int, 100), make([]int, 0, BUCKET_CAPACITY)}
+	return &LIS{make([]int, 0, BUCKET_CAPACITY)}
 }
 
 func (lis *LIS) findIdx(num int) int {

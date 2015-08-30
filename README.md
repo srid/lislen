@@ -1,6 +1,6 @@
 # lislen
 
-Finding the length of [longest increasing subsequence](https://en.wikipedia.org/wiki/Longest_increasing_subsequence) using [patience sorting](https://en.wikipedia.org/wiki/Patience_sorting).
+Find the length of [longest increasing subsequence](https://en.wikipedia.org/wiki/Longest_increasing_subsequence) using [patience sorting](https://en.wikipedia.org/wiki/Patience_sorting).
 
 ```
 go build

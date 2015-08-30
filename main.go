@@ -9,7 +9,7 @@ import (
 )
 
 func fail(msg string) {
-	fmt.Printf("ERR: %v\n", msg)
+	fmt.Fprintf(os.Stderr, "ERR: %v\n", msg)
 	os.Exit(2)
 }
 

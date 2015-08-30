@@ -16,8 +16,18 @@ func NewLIS() *LIS {
 	return &LIS{make(chan int, 100), make([]int, 0, BUCKET_CAPACITY)}
 }
 
+func (lis *LIS) findIdx(num int) int {
+	// on a mostly sorted array, check the last bucket before doing binary search.
+	bLen := len(lis.bucket)
+	if bLen > 0 && lis.bucket[bLen-1] < num {
+		return bLen
+	} else {
+		return sort.SearchInts(lis.bucket, num)
+	}
+}
+
 func (lis *LIS) Add(num int) int {
-	idx := sort.SearchInts(lis.bucket, num)
+	idx := lis.findIdx(num)
 	switch {
 	case idx == len(lis.bucket):
 		lis.bucket = append(lis.bucket, num)

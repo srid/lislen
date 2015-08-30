@@ -7,3 +7,6 @@ go build
 echo "5 4 3 2 1 9 8 6" | tr -s " " "\012" | ./lislen
 ```
 
+## optimizations
+
+* works faster on mostly sorted array
